@@ -45,7 +45,7 @@ h1 {
     background-image: url('./images/background3.png');
 }
 #fourthPage {
-    background-image: url('./images/755385.jpg');
+    background-image: url('./images/background4.jpg');
 }
 h1 {
     display: flex;
@@ -89,7 +89,7 @@ ul {
     align-items: flex-start;
     gap: 1.5rem;
     padding:0;
-    margin: 0 0 4rem 0;
+    margin: 0 0 4rem 0  ;
     list-style-type: none;
 }
 .navBar {
@@ -141,10 +141,17 @@ li {
     border-width: 5px;
     border-image-source: linear-gradient(to right,#CCA90F,#ff0957 ); 
 }
-@media (max-width:770px) {
+section {
+    background-attachment: fixed;
+}
+@media (max-width:870px) {
     .techIconContainer {
         place-items: center;
-        grid-template-columns: repeat(3, .5fr);
+        grid-template-columns: repeat(4,1fr);
+    }
+    .cursor {
+        height: 2rem;
+        width: 2rem;
     }
     .navBar {
         justify-content: center;
@@ -153,60 +160,102 @@ li {
         gap:0rem;
     }
     a {
-        font-size: 2rem;
+        font-size: 1.75rem;
+    }
+    a:hover, a:focus {
+        font-size: 1.75rem;
+
     }
     li {
         padding: .65rem;
     }
     h1 {
+        display: flex;
+        justify-content: center;
         font-size: 3rem;
     }
     h2 {
         text-align: center;
         font-size: 2rem;
         /* letter-spacing: .25rem; */
-        margin-bottom: 5rem;
+        margin-bottom: 3em;
+        background-image: linear-gradient( 90deg, #CCA90F, #ff0957  );
+    }
+    .titleWrapper {
+        border-radius: 3%;
+        padding-top: 2rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding-bottom: 4rem;
     }
     svg {
-        height: 3rem;
-        width: 3rem;
+        height: 4rem;
+        width: 4rem;
     }
-    section:not(#secondPage){
-        padding: .55rem
+    section:not(#secondPage) {
+        padding: 2rem 1rem;
+    }
+    section {
+        display: flex;
+        flex-direction: column;
+    }
+    #firstPage {
+        background-image: url('./images/tabletBackground1.png');
+        background-size: cover;
+    }
+    #secondPage {
+        background-image: url('./images/tabletBackground2.png');
+        background-size: cover;
+    }
+    #thirdPage {
+        background-image: url('./images/tabletBackground3.png');
+        background-size: cover;
+    }
+    #fourthPage {
+        background-image: url('./images/tabletBackground4.png');
+
+        background-size: cover;
     }
 }
-@media (max-width:521px) {
-    /* .techIconContainer {
-        place-items: center;
-        grid-template-columns: repeat(3, .5fr);
-    } */
-    /* .navBar {
-        justify-content: center;
-    } */
-    /* ul {
-        gap:0rem;
-        margin-bottom: 2rem;
-    } */
+@media (max-width:650px) {
     a {
-        font-size: 1rem;
+        font-size: 1.5rem;
     }
+         @media (max-width: 415px) {
+             a {
+                 font-size: 1rem;
+             }
+             
+         }
     li {
         padding: .35rem;
     }
     h1 {
         font-size: 2rem;
-        /* margin-bottom: 2rem; */
+
     }
     h2 {
         text-align: center;
-        font-size: 1rem;
-        /* letter-spacing: .55rem; */
+        font-size: 1.25rem;
+        background-image: linear-gradient( 90deg, #CCA90F, #ff0957  );
     }
     svg {
         height: 3rem;
         width: 3rem;
     }
-    section:not(#secondPage){
-        padding: .25rem
+    #firstPage {
+        background-image: url('./images/mobileBackground.png');
+        background-attachment: fixed;
+    }
+    #secondPage {
+        background-image: url('./images/mobileBackground2.png');
+        background-position: center;
+    }
+    #thirdPage {
+        background-image: url('./images/mobileBackground3.png');
+        background-position: center;
+    }
+    #fourthPage {
+        background-image: url('./images/mobileBackground4.png');
+        background-position: center;
     }
 }
