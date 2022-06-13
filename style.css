@@ -55,7 +55,7 @@ h1 {
     display: flex;
     align-items: flex-start;
     margin-top: 0;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
     color: white;
     font-size: 4.6875rem;
     font-weight: 900;
@@ -73,7 +73,7 @@ h2{
     -webkit-text-fill-color: transparent;
    
 }
-a:not(.next, .prev) {
+.navLinks {
     cursor: none;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -82,11 +82,11 @@ a:not(.next, .prev) {
     background-size: cover;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.4375rem;
+    font-size: 2rem;
     letter-spacing: .2rem;
 }
-a:hover:not('.prev, .next '), a:focus:not('.prev, .next '){
-    font-size: 1.7rem;
+.navLinks:hover, .navLinks:focus {
+    font-size: 2.2rem;
 }
 ul {
     display: flex;
@@ -125,8 +125,8 @@ ul {
 }
 .cursor {
     z-index: 1;
-    width: 3rem;
-    height: 3rem;
+    width: 2rem;
+    height: 2rem;
     border: 2px solid lightskyblue;
     position:absolute;
     transform: translate(-50%,-50%);
@@ -151,9 +151,8 @@ section {
 }
 .slideshow-container {
     background-color: rgba(0, 0, 0, 0.7);
-    width: clamp(150px,90vw,1200px);
+    width: clamp(150px,90vw,1400px);
     position: relative;
-    margin: auto;
 }
 
 img {
@@ -203,7 +202,7 @@ img {
     top: 0;
 }
 .dot {
-    cursor: pointer;
+    cursor: none;
     height: 1rem;
     width: 1rem;
     margin: 0 .1rem;
@@ -231,6 +230,9 @@ img {
     }
 }
 @media (max-width:870px) {
+    .slideshow-container {
+        margin: auto;
+    }
     .introContainer {
         padding: 1rem 1.25rem;
     }
@@ -251,12 +253,11 @@ img {
     ul {
         gap:0rem;
     }
-    a:not(.prev, .next) {
-        font-size: 1.75rem;
+    .navLinks {
+        font-size: 1.6rem;
     }
-    a:hover:not(.prev, .next), a:focus:not(.prev, .next) {
-        font-size: 1.75rem;
-
+    .navLinks:hover, .navLinks:focus {
+        font-size: 1.85rem;
     }
     li {
         padding: .65rem;
@@ -301,7 +302,10 @@ img {
 }
 @media (max-width:650px) {
 
-    a:not(.prev, .next) {
+    .navLinks {
+        font-size: 1.5rem;
+    }
+    .navLinks:hover {
         font-size: 1.5rem;
     }
     li {
@@ -333,13 +337,19 @@ img {
     }
 }
 @media (max-width: 415px) {
-a:not(.prev, .next){
-                 font-size: 1rem;
-             }
+.navLinks{
+    font-size: 1rem;
+    }
+.navLinks:hover, .navLinks:focus {
+    font-size: 1rem;
+}
              
 }
 @media (max-width:300px) {
-    a:not(.prev, .next) {
+    .navLinks {
+        font-size: .75rem;
+    }
+    .navLinks:hover, .navLinks:focus {
         font-size: .75rem;
     }
     h1 { 
@@ -366,12 +376,18 @@ a:not(.prev, .next){
     .titleWrapper {
         padding: 1rem;
     }
-    a:not(.prev, .next) {
+    .navLinks {
+        font-size: .5rem;
+    }
+    .navLinks:hover, .navLinks:focus {
         font-size: .5rem;
     }
 }
 @media (max-width:197px){
-        a:not(.prev, .next) {
+        .navLinks {
+        font-size: .4rem;
+    }
+    .navLinks:hover, .navLinks:focus {
         font-size: .4rem;
     }
     section:not(#secondPage) {
