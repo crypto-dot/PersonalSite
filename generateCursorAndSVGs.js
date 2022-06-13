@@ -55,7 +55,7 @@
 })();
 (function mouseCursor () {
     let cursor = document.querySelector('.cursor');
-    let navLinks = document.querySelectorAll('.navLinks');
+    let navLinks = document.querySelectorAll('.navLinks, .prev, .next');
     window.addEventListener('mousemove', cursorAnimation);
 
     function cursorAnimation(e) {

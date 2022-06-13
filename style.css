@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;900&display=swap');
 @import url('normalize.css');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+* {
+    box-sizing: border-box;
+}
 body, html {
     cursor: none;
     margin: 0;
@@ -12,6 +15,7 @@ main {
     width: 100%;
     height: 100%;
 }
+
 section {
     background-repeat: no-repeat;
     background-size: cover;
@@ -42,7 +46,7 @@ h1 {
     background-image: url('./images/background2.png');
 }
 #thirdPage {
-    background-image: url('./images/background3.png');
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.507) ), url('./images/background3.png');
 }
 #fourthPage {
     background-image: url('./images/background4.jpg');
@@ -69,7 +73,7 @@ h2{
     -webkit-text-fill-color: transparent;
    
 }
-a {
+a:not(.next, .prev) {
     cursor: none;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -81,7 +85,7 @@ a {
     font-size: 1.4375rem;
     letter-spacing: .2rem;
 }
-a:hover, a:focus {
+a:hover:not('.prev, .next '), a:focus:not('.prev, .next '){
     font-size: 1.7rem;
 }
 ul {
@@ -114,12 +118,13 @@ ul {
     font-family: 'Lato', sans-serif;
     color: white;
     padding: 2rem 2.5rem 2.5rem 2.5rem;
-    line-height: 3rem;
+    line-height: 3.5rem;
     font-size: 1.75rem;
-    background-color: #c93afb59;
+    background-color: #c93afb7d;
     max-width: 40rem;
 }
 .cursor {
+    z-index: 1;
     width: 3rem;
     height: 3rem;
     border: 2px solid lightskyblue;
@@ -144,7 +149,94 @@ li {
 section {
     background-attachment: fixed;
 }
+.slideshow-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: clamp(150px,90vw,1200px);
+    position: relative;
+    margin: auto;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+.mySlides {
+    display: none;
+}
+.prev, .next {
+    cursor: none;
+    position: absolute;
+    top: 50%;
+    margin-top: -2%;
+    padding: 1rem;
+    color: white;
+    font-weight: 900;
+    font-size: 1.25rem;
+    transition: 0.6s ease;
+    border-radius: 0 5% 5% 0;
+    user-select: none;
+}
+.next {
+    right: 0;
+    border-radius: 5% 0 0 5%;
+}
+.prev:hover, .next:hover {
+    cursor: none;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.text {
+    color:white;
+    font-size: 1.5rem;
+    padding: .25rem 0rem;
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+}
+.numberText {
+    color:white;
+    font-size: 1rem;
+    padding: .5rem .75rem;
+    position: absolute;
+    top: 0;
+}
+.dot {
+    cursor: pointer;
+    height: 1rem;
+    width: 1rem;
+    margin: 0 .1rem;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.dots {
+    text-align: center;
+}
+.active, .dot:hover {
+    background-color: #717171;
+  }
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
 @media (max-width:870px) {
+    .introContainer {
+        padding: 1rem 1.25rem;
+    }
+    .text {
+        font-size: 1rem;
+    }
     .techIconContainer {
         place-items: center;
         grid-template-columns: repeat(4,1fr);
@@ -159,10 +251,10 @@ section {
     ul {
         gap:0rem;
     }
-    a {
+    a:not(.prev, .next) {
         font-size: 1.75rem;
     }
-    a:hover, a:focus {
+    a:hover:not(.prev, .next), a:focus:not(.prev, .next) {
         font-size: 1.75rem;
 
     }
@@ -183,7 +275,7 @@ section {
     }
     .titleWrapper {
         border-radius: 3%;
-        padding-top: 2rem;
+        padding: 2rem;
         background-color: rgba(0, 0, 0, 0.5);
         padding-bottom: 4rem;
     }
@@ -206,37 +298,18 @@ section {
         background-image: url('./images/tabletBackground2.png');
         background-size: cover;
     }
-    #thirdPage {
-        background-image: url('./images/tabletBackground3.png');
-        background-size: cover;
-    }
-    #fourthPage {
-        background-image: url('./images/tabletBackground4.png');
-
-        background-size: cover;
-    }
 }
 @media (max-width:650px) {
-    a {
+
+    a:not(.prev, .next) {
         font-size: 1.5rem;
     }
-         @media (max-width: 415px) {
-             a {
-                 font-size: 1rem;
-             }
-             
-         }
     li {
         padding: .35rem;
     }
     h1 {
         font-size: 2rem;
 
-    }
-    h2 {
-        text-align: center;
-        font-size: 1.25rem;
-        background-image: linear-gradient( 90deg, #CCA90F, #ff0957  );
     }
     svg {
         height: 3rem;
@@ -251,11 +324,57 @@ section {
         background-position: center;
     }
     #thirdPage {
-        background-image: url('./images/mobileBackground3.png');
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.507) ), url('./images/mobileBackground3.png');
         background-position: center;
     }
     #fourthPage {
         background-image: url('./images/mobileBackground4.png');
         background-position: center;
+    }
+}
+@media (max-width: 415px) {
+a:not(.prev, .next){
+                 font-size: 1rem;
+             }
+             
+}
+@media (max-width:300px) {
+    a:not(.prev, .next) {
+        font-size: .75rem;
+    }
+    h1 { 
+        font-size: 1rem;
+    }
+    h2 {
+        font-size: .75rem;
+    }
+    svg {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+@media (max-width: 246px) {
+    .introContainer {
+        line-height: 2rem;
+        font-size: 1rem;
+
+    }
+    section:not(#secondPage) {
+        padding: 1rem 0.5rem;
+    }
+    
+    .titleWrapper {
+        padding: 1rem;
+    }
+    a:not(.prev, .next) {
+        font-size: .5rem;
+    }
+}
+@media (max-width:197px){
+        a:not(.prev, .next) {
+        font-size: .4rem;
+    }
+    section:not(#secondPage) {
+        padding: 0rem;
     }
 }

@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Arbizu</title>
     <link rel='stylesheet' href="./style.css">
-    <script src='js-file.js' defer></script>
+    <script src='generateCursorAndSVGs.js' defer></script>
+    <script src='slideShow.js' defer></script>
 </head>
 <body>
     <div class="cursor"></div>
@@ -27,14 +28,51 @@
             </div>
     </section>
     <section class="section" id= 'secondPage'>
-        <h1 class = 'secondPageTitle'>About Me</h1>
+        <h1 class = 'secondPageTitle'>About</h1>
         <div class='introContainer'>
-            Every since I was a young kid I loved computers. I’m very passionate about learning new languages, different technologies, and new skills. I'm completely self taught and I am pursuing opportunities in frontend or backend work. 
-            Some of my hobbies include gaming, going for walks with my dog, and listening to music.
+            Welcome to my online portfolio where you can find my completed projects centered around showcasing my skill sets. I am a self-taught fullstack developer who is passionate about the world of technology. During off hours, you can find me gaming with my peers, walking my dog, or expanding my music taste. I hope you enjoy my content, feel free to reach out to me via the contact page.  
         </div>
     </section>
 <section id= 'thirdPage'>
     <h1>Projects</h1>
+    <div class="slideshow-container-wrapper">
+        <div class= 'slideshow-container'>
+            <div class="mySlides fade">
+                <div class="numberText">1/5</div>
+                <img src= './images/Project1.png' alt= 'Screenshot of project 1'>
+                <div class="text">Admin Dashboard</div> <span></span>
+            </div>
+            <div class="mySlides fade">
+                <div class="numberText">2/5</div>
+                <img src= './images/Project2.png' alt= 'Screenshot of project 2'>
+                <div class="text">Rock Paper Scissors </div> <span></span>
+            </div>
+            <div class="mySlides fade">
+                <div class="numberText">3/5</div>
+                <img src= './images/Project3.png'  alt= 'Screenshot of project 3'>
+                <div class="text">Dynamically Rendered Restaurant Webpage</div> <span></span>
+            </div>
+            <div class="mySlides fade">
+                <div class="numberText">4/5</div>
+                <img src= './images/Project4.png'  alt= 'Screenshot of project 4'>
+                <div class="text">Login Page</div> <span></span>
+            </div>
+            <div class="mySlides fade">
+                <div class="numberText">5/5</div>
+                <img src= './images/Project5.png'  alt= 'Screenshot of project 5'>
+                <div class="text">RayTracing</div> <span></span>
+            </div>
+            <a data-index = -1 class= 'prev' >❮</a>
+            <a data-index = 1 class= 'next'>❯</a>
+            <div class="dots">
+                <span data-index = '1' class='dot' ></span>
+                <span data-index = '2' class='dot' ></span>
+                <span data-index = '3' class='dot' ></span>
+                <span data-index = '4' class='dot'></span>
+                <span data-index = '5' class='dot' ></span>
+            </div>
+        </div>
+    </div>
 </section>
 <section id='fourthPage'>
     <h1>Contact</h1>     
