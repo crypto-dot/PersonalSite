@@ -1,0 +1,459 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;900&display=swap');
+@import url('normalize.css');
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+* {
+    box-sizing: border-box;
+}
+body, html {
+    cursor: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+main {
+    width: 100%;
+    height: 100%;
+}
+
+section {
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100%;
+    min-width: 90%;
+    font-family: 'Orbitron', sans-serif;
+}
+section:not(#secondPage) {
+    padding: 2.5rem;
+}
+h1 {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 0;
+    margin-bottom: 4rem;
+    color: white;
+    font-size: 4.6875rem;
+    font-weight: 900;
+}
+.secondPageTitle {
+    padding: 2.5rem 2.5rem 0rem 2.5rem;
+    margin-bottom: 2rem;
+}
+#firstPage {
+    background-image: url('./images/background1.png');
+}
+#secondPage {
+    background-image: url('./images/background2.png');
+}
+#thirdPage {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.507) ), url('./images/background3.png');
+}
+#fourthPage {
+    background-image: url('./images/background4.jpg');
+}
+h1 {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 0;
+    margin-bottom: 5rem;
+    color: white;
+    font-size: 4.6875rem;
+    font-weight: 900;
+}
+h2{
+    margin-bottom: 2rem;
+    font-weight: 400;
+    margin-top: 0;
+    letter-spacing: 1rem;
+    font-size: 1.5rem;
+    background-image: linear-gradient( 90deg, #CCA90F, #C92759,  #C92759, #ff0957, #ff0957, #ff0957  );
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color:transparent;
+    -webkit-text-fill-color: transparent;
+   
+}
+.navLinks {
+    cursor: none;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    -moz-text-fill-color:transparent;
+    -webkit-text-fill-color: transparent;
+    background-size: cover;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 2rem;
+    letter-spacing: .2rem;
+}
+.navLinks:hover, .navLinks:focus {
+    font-size: 2.2rem;
+}
+ul {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding:0;
+    margin: 0 0 4rem 0  ;
+    list-style-type: none;
+}
+.navBar {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-between;
+}
+.aboutHyperLink {
+    background-image: linear-gradient(90deg,#CCA90F,#CB6E31);
+}
+.projectsHyperLink {
+    background-image: linear-gradient(90deg, #CB742D, #C94948);
+}
+.contactHyperLink {
+    background-image: linear-gradient(90deg, #C94948, #C92759);
+}
+.techIconContainer {
+    display: grid;
+    grid-template-columns: repeat(4, .04fr);
+}
+.introContainer {
+    font-family: 'Lato', sans-serif;
+    color: white;
+    padding: 2rem 2.5rem 2.5rem 2.5rem;
+    line-height: 3.5rem;
+    font-size: 1.75rem;
+    background-color: #1e0a37c4;
+    max-width: 40rem;
+}
+.cursor {
+    z-index: 1;
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid lightskyblue;
+    position:absolute;
+    transform: translate(-50%,-50%);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transition-property: background, transform;
+    transform-origin: 100% 100%;
+    backdrop-filter: grayscale() ;
+}
+
+@media (max-width: 1000px) {
+    .cursor {
+        display: none;
+    }
+}
+li {
+    padding: 1.5rem;
+}
+.cursorGrow {
+    border-radius: 0;
+    border: 10px solid;
+    border-image: 1;
+    border-width: 5px;
+    border-image-source: linear-gradient(to right,#CCA90F,#ff0957 ); 
+}
+section {
+    background-attachment: fixed;
+}
+.slideshow-container {
+    background-color: rgba(0, 0, 0, 0.7);
+    width: clamp(150px,90vw,1400px);
+    position: relative;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+.mySlides {
+    display: none;
+}
+.prev, .next {
+    cursor: none;
+    position: absolute;
+    top: 50%;
+    margin-top: clamp(-35px,-25%,-5px);;
+    padding: 1rem;
+    color: white;
+    font-weight: 900;
+    font-size: 1.25rem;
+    transition: 0.6s ease;
+    border-radius: 0 5% 5% 0;
+    user-select: none;
+}
+.next {
+    right: 0;
+    border-radius: 5% 0 0 5%;
+}
+.prev:hover, .next:hover, .prev:focus, .next:focus {
+    cursor: none;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+.text {
+    color:white;
+    font-size: 1.5rem;
+    padding: .25rem 0rem;
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-weight: 600;
+}
+.numberText {
+    color:white;
+    font-size: 1rem;
+    padding: .5rem .75rem;
+    position: absolute;
+    top: 0;
+}
+.dot {
+    cursor: none;
+    height: 1rem;
+    width: 1rem;
+    margin: 0 .1rem;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.dots {
+    text-align: center;
+}
+.active, .dot:hover {
+    background-color: #717171;
+  }
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+form {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 2rem;
+    font-family: 'Lato', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap:2rem;
+    width: clamp(150px,75vw,400px);
+}
+input:invalid {
+    background-color: rgba(233, 198, 198, 0.822);
+    outline: red;
+}
+input:valid {
+    background-color: rgba(205, 255, 205, 0.726);
+    outline: green;
+}
+textarea, input {
+    border:none;
+}
+textarea {
+    padding-left: 1rem;
+    border-radius: .5rem;
+    height:5rem;
+}
+input {
+    border-radius: 1rem;
+    padding-left: 1rem;
+}
+button[type= 'submit'] {
+    cursor: none;
+    border: none;
+    border-radius: 0.5rem;
+    width: 50%;
+    min-width: 70px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    color: rgb(32 15 78);
+    background-color: rgba(67, 199, 204, 0.9);
+    font-family: 'Lato',sans-serif;
+}
+button[type=submit]:hover, button[type=submit]:focus {
+    background-color:rgba(120, 195, 197, 0.9); 
+}
+@keyframes fade {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+@media (max-width:870px) {
+    .slideshow-container {
+        margin: auto;
+    }
+
+    .introContainer {
+        padding: 1rem 1.25rem;
+    }
+    .text {
+        margin-bottom: 0.75rem;
+        font-size: 1rem;
+    }
+    .techIconContainer {
+        place-items: center;
+        grid-template-columns: repeat(4,1fr);
+    }
+    .navBar {
+        justify-content: center;
+    }
+    ul {
+        gap:0rem;
+    }
+    .navLinks {
+        font-size: 1.6rem;
+    }
+    .navLinks:hover, .navLinks:focus {
+        font-size: 1.85rem;
+    }
+    li {
+        padding: .65rem;
+    }
+    h1 {
+        display: flex;
+        justify-content: center;
+        font-size: 3rem;
+    }
+    h2 {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 3em;
+        background-image: linear-gradient( 90deg, #CCA90F, #ff0957  );
+    }
+    .titleWrapper {
+        border-radius: 3%;
+        padding: 2rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        padding-bottom: 4rem;
+    }
+    svg {
+        height: 4rem;
+        width: 4rem;
+    }
+    section:not(#secondPage) {
+        padding: 2rem 1rem;
+    }
+    section {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    #firstPage {
+        background-image: url('./images/tabletBackground1.png');
+        background-size: cover;
+    }
+    #secondPage {
+        background-image: url('./images/tabletBackground2.png');
+        background-size: cover;
+    }
+}
+@media (max-width:650px) {
+    .text {
+        font-size: .75rem;
+    }
+
+    .navLinks {
+        font-size: 1.5rem;
+    }
+    .navLinks:hover {
+        font-size: 1.5rem;
+    }
+    li {
+        padding: .35rem;
+    }
+    h1 {
+        font-size: 2rem;
+
+    }
+    svg {
+        height: 3rem;
+        width: 3rem;
+    }
+    #firstPage {
+        background-image: url('./images/mobileBackground.png');
+        background-attachment: fixed;
+    }
+    #secondPage {
+        background-image: url('./images/mobileBackground2.png');
+        background-position: center;
+    }
+    #thirdPage {
+        background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.507) ), url('./images/mobileBackground3.png');
+        background-position: center;
+    }
+    #fourthPage {
+        background-image: url('./images/mobileBackground4.png');
+        background-position: center;
+    }
+}
+@media (max-width: 500px) {
+    input, textarea {
+        font-size: .75rem;
+    }
+}
+@media (max-width: 415px) {
+    input, textarea {
+        font-size: .5rem;
+    }
+.navLinks{
+    font-size: 1rem;
+    }
+.navLinks:hover, .navLinks:focus {
+    font-size: 1rem;
+}
+             
+}
+@media (max-width:300px) {
+    .text {
+        font-size:.5rem;
+    }
+    .navLinks {
+        font-size: .75rem;
+    }
+    .navLinks:hover, .navLinks:focus {
+        font-size: .75rem;
+    }
+    h1 { 
+        font-size: 1rem;
+    }
+    h2 {
+        font-size: .75rem;
+    }
+    svg {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+@media (max-width: 246px) {
+    .introContainer {
+        line-height: 2rem;
+        font-size: 1rem;
+
+    }
+    section:not(#secondPage) {
+        padding: 1rem 0.5rem;
+    }
+    
+    .titleWrapper {
+        padding: 1rem;
+    }
+    .navLinks {
+        font-size: .5rem;
+    }
+    .navLinks:hover, .navLinks:focus {
+        font-size: .5rem;
+    }
+}
+@media (max-width:197px){
+        .navLinks {
+        font-size: .4rem;
+    }
+    .navLinks:hover, .navLinks:focus {
+        font-size: .4rem;
+    }
+    section:not(#secondPage) {
+        padding: 0rem;
+    }
+}
